@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kazuka Portfolio Template</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar" aria-label="Primary">
+        <a class="logo" href="#home" aria-label="Go to Home">KZ</a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="nav-links"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a href="#home" class="nav-link">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#stats" class="nav-link">Project Stats</a>
+          <a href="#tools" class="nav-link">Tools</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="section hero-section">
+        <canvas id="particle-canvas" aria-hidden="true"></canvas>
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <p class="eyebrow">Portfolio Template</p>
+            <h1 class="hero-title">Hi, I’m <span id="name">Kazuka</span></h1>
+            <p class="hero-tagline" id="tagline"></p>
+            <div class="hero-actions">
+              <a class="button primary" href="#about">About me</a>
+            </div>
+            <div class="social-row" aria-label="Social links" role="list">
+              <button class="icon-button" data-social="instagram" aria-label="Instagram" type="button" role="listitem">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17" cy="7" r="1.2" /></svg>
+              </button>
+              <button class="icon-button" data-social="discord" aria-label="Discord" type="button" role="listitem">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7.5c2-1.4 8-1.4 10 0l1.5 9.5c-2 1.6-4.5 2.4-6.5 2.4s-4.5-.8-6.5-2.4L7 7.5z" /><circle cx="9.5" cy="12" r="1.2" /><circle cx="14.5" cy="12" r="1.2" /></svg>
+              </button>
+              <button class="icon-button" data-social="tiktok" aria-label="TikTok" type="button" role="listitem">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4v9.2a3.8 3.8 0 1 1-3.2-3.7" /><path d="M14 4c1.5 2 3 3 5.5 3" /></svg>
+              </button>
+              <button class="icon-button" data-social="github" aria-label="GitHub" type="button" role="listitem">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c-4.7 0-8.5 3.8-8.5 8.5 0 3.7 2.4 6.9 5.7 8 .4.1.6-.1.6-.4v-1.5c-2.3.5-2.8-1-2.8-1-.3-.8-.8-1-1.3-1-.9-.1-.1-.7.2-.8 1-.1 1.6 1 1.6 1 .8 1.3 2.2.9 2.7.7.1-.6.3-1 .6-1.2-1.9-.2-3.9-1-3.9-4.2 0-.9.3-1.7.8-2.3-.1-.2-.3-1 .1-2.1 0 0 .7-.2 2.4.8.7-.2 1.4-.3 2.2-.3s1.5.1 2.2.3c1.7-1 2.4-.8 2.4-.8.4 1.1.2 1.9.1 2.1.5.6.8 1.4.8 2.3 0 3.2-2 4-3.9 4.2.3.3.6.8.6 1.6v2.4c0 .3.2.5.6.4 3.3-1.1 5.7-4.3 5.7-8 0-4.7-3.8-8.5-8.5-8.5z" /></svg>
+              </button>
+              <button class="icon-button" data-social="line" aria-label="LINE" type="button" role="listitem">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4c-4.1 0-7.5 2.7-7.5 6s3.4 6 7.5 6h1.5l3 2.5-.5-3.5c2.2-1 3.5-2.7 3.5-4.5 0-3.3-3.4-6-7.5-6z" /></svg>
+              </button>
+              <button class="icon-button" data-social="linkedin" aria-label="LinkedIn" type="button" role="listitem">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="9" width="3" height="11" /><circle cx="5.5" cy="5.5" r="1.5" /><rect x="9" y="9" width="3" height="11" /><path d="M15 9h3v1.5c.6-1 1.6-2 3.5-2 2.6 0 3.5 1.8 3.5 4.5V20h-3v-6.5c0-1.6-.6-2.6-2-2.6-1.3 0-2 1-2 2.5V20h-3z" /></svg>
+              </button>
+              <button class="icon-button" data-social="facebook" aria-label="Facebook" type="button" role="listitem">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 9h3V6h-3c-2.2 0-4 1.8-4 4v3H7v3h2v5h3v-5h3l1-3h-4v-2c0-1 .4-2 1-2z" /></svg>
+              </button>
+            </div>
+          </div>
+          <div class="hero-image" aria-hidden="true">
+            <img src="assets/avatar-placeholder.svg" alt="Avatar placeholder" />
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="container about-grid">
+          <div class="reveal">
+            <h2>About</h2>
+            <p id="about-text" class="body-text"></p>
+          </div>
+          <div class="about-photo reveal">
+            <img src="assets/about-photo-placeholder.svg" alt="About placeholder" />
+          </div>
+        </div>
+      </section>
+
+      <section id="stats" class="section alt-section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <h2>Project Stats</h2>
+            <p>Snapshot of impact and momentum.</p>
+          </div>
+          <div class="stats-grid" id="stats-grid"></div>
+        </div>
+      </section>
+
+      <section id="tools" class="section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <h2>Tools</h2>
+            <p>Technologies and platforms I work with.</p>
+          </div>
+          <div class="tools-grid" id="tools-grid"></div>
+        </div>
+      </section>
+
+      <section id="projects" class="section alt-section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <h2>Projects</h2>
+            <p>Selected work with a focus on clarity and outcomes.</p>
+          </div>
+          <div class="projects-grid" id="projects-grid"></div>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <h2>Contact</h2>
+            <p>Let’s connect and build something meaningful.</p>
+          </div>
+          <div class="contact-grid" id="contact-grid"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p id="footer-text"></p>
+      </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
