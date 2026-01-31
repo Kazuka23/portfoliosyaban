@@ -1,6 +1,6 @@
 const content = {
-  name: 'Kazuka',
-  tagline: 'I design and build digital experiences that feel precise, calm, and future-ready.',
+  name: 'Syaban',
+  tagline: 'Driven by a love for Science and Technology, my goal is to use innovation to positively shape our world.',
   socialLinks: {
     instagram: '',
     discord: '',
@@ -11,7 +11,7 @@ const content = {
     facebook: ''
   },
   aboutText:
-    'Write a short introduction about your background, your focus, and the type of projects you love. Keep it concise and highlight the results you care about most.',
+    'Hello, I am Muhammad Syaban Ibrahim, born in Bandung on July 23, 2009. My fascination with computers began in childhood. While spending hours playing games, a simple yet powerful question formed in my mind: "How does this machine work? What makes these games possible? How are they created?" This early curiosity sparked a lasting obsession with the mysteries of science and technology. My ambition is to find the answers and unravel these mysteries through my work.',
   stats: [
     {
       value: 120,
