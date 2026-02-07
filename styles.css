@@ -245,6 +245,20 @@ img {
   align-items: center;
 }
 
+.about-photo {
+  background: var(--bg-alt);
+  padding: 24px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.about-photo img {
+  border-radius: 12px;
+  max-width: 100%;
+  display: block;
+}
+
 .body-text {
   font-size: 1.05rem;
   color: var(--text-muted);
