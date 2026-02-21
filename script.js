@@ -43,9 +43,12 @@ document.querySelectorAll('[data-social]').forEach((button) => {
 });
 
 const statIcons = [
-  '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14l4-4 4 4 6-6" stroke-width="2" fill="none"/></svg>',
-  '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" stroke-width="2" fill="none"/><path d="M12 8v4l3 3" stroke-width="2" fill="none"/></svg>',
-  '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18h12M6 6h12M6 12h12" stroke-width="2" fill="none"/></svg>'
+  // Hibernation: display "z z z"
+  '<svg viewBox="0 0 24 24" aria-hidden="true"><text x="2" y="16" font-size="12" fill="currentColor" font-family="Inter, Arial, sans-serif">z z z</text></svg>',
+  // Learning: book icon
+  '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h12v14H3z" stroke-width="1.6" fill="none"/><path d="M15 5v14" stroke-width="1.6" fill="none"/></svg>',
+  // Gaming: gamepad icon
+  '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="10" rx="3" stroke-width="1.6" fill="none"/><circle cx="9" cy="12" r="1.2" fill="currentColor"/><path d="M15 11v2M14 12h2" stroke-width="1.6" fill="none"/></svg>'
 ];
 
 content.stats.forEach((stat, index) => {
@@ -175,25 +178,56 @@ const animateStats = () => {
     const target = Number(stat.dataset.value);
     const suffix = stat.dataset.suffix || '';
     if (prefersReducedMotion) {
-      stat.textContent = `${target}${suffix}`;
+      const decimals = countDecimals(target);
+      stat.textContent = `${formatNumber(target, decimals)}${suffix}`;
       return;
     }
+
     const startTime = performance.now();
-    const duration = 1200;
+    const duration = 1400;
+
+    const decimals = countDecimals(target);
 
     const update = (time) => {
-      const progress = Math.min((time - startTime) / duration, 1);
-      const current = Math.floor(progress * target);
-      stat.textContent = `${current}${suffix}`;
-      if (progress < 1) {
+      const rawProgress = Math.min((time - startTime) / duration, 1);
+      const progress = easeOutCubic(rawProgress);
+      const current = target * progress;
+      stat.textContent = `${formatNumber(current, decimals)}${suffix}`;
+      if (rawProgress < 1) {
         requestAnimationFrame(update);
       } else {
-        stat.textContent = `${target}${suffix}`;
+        stat.textContent = `${formatNumber(target, decimals)}${suffix}`;
       }
     };
     requestAnimationFrame(update);
   });
 };
+
+function countDecimals(value) {
+  if (!Number.isFinite(value)) return 0;
+  const s = String(value);
+  if (s.indexOf('e-') >= 0) {
+    // handle small exponential numbers
+    const m = s.match(/e-(\d+)$/);
+    return m ? parseInt(m[1], 10) : 0;
+  }
+  const parts = s.split('.');
+  return parts[1] ? parts[1].length : 0;
+}
+
+function formatNumber(value, decimals = 0) {
+  const opts = { minimumFractionDigits: decimals, maximumFractionDigits: decimals };
+  try {
+    // use user's locale (id-ID gives dot thousands / comma decimals in Indonesia)
+    return new Intl.NumberFormat(navigator.language || 'en-US', opts).format(value);
+  } catch (e) {
+    return Number(value).toFixed(decimals);
+  }
+}
+
+function easeOutCubic(t) {
+  return 1 - Math.pow(1 - t, 3);
+}
 
 const statsSection = document.getElementById('stats');
 const statsObserver = new IntersectionObserver(

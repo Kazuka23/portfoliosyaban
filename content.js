@@ -14,22 +14,22 @@ const content = {
     'Hello, I am Muhammad Syaban Ibrahim, born in Bandung on July 23, 2009. My fascination with computers began in childhood. While spending hours playing games, a simple yet powerful question formed in my mind: "How does this machine work? What makes these games possible? How are they created?" This early curiosity sparked a lasting obsession with the mysteries of science and technology. My ambition is to find the answers and unravel these mysteries through my work.',
   stats: [
     {
-      value: 120,
+      value: 45.428,
       suffix: '+',
-      title: 'Hours Shipped',
-      description: 'Focused hours spent designing and refining client-ready deliverables.'
+      title: 'Hibernation in Hours',
+      description: 'A grand total of 45.428 hours invested in hibernation and dream state adventures.'
     },
     {
-      value: 24,
+      value: 32.872,
       suffix: '+',
-      title: 'Projects Delivered',
-      description: 'Product launches, campaigns, and portfolio pieces completed end-to-end.'
+      title: 'Learning in Hours',
+      description: 'Logged 32.872 hours of fueled curiosity, constant learning and academic.'
     },
     {
-      value: 8,
+      value: 13.788,
       suffix: '+',
-      title: 'Teams Supported',
-      description: 'Cross-functional collaborations with founders, creators, and studios.'
+      title: 'Gaming in Hours',
+      description: 'Logged 13.788 hours of epic adventures, digital quests, and legendary victories.'
     }
   ],
   tools: [
